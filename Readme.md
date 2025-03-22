@@ -1,11 +1,12 @@
 # PyCmd - Custom Command Shell
 
 ## Overview
-PyCmd is a simple Python-based command shell that allows users to execute system commands, rename the shell prompt, and log command outputs to a file (`stdout.txt`).
+PyCmd is a simple Python-based command shell that allows users to execute system commands, rename the shell prompt, and log command outputs to a hidden directory (`.pycmdlogs`).
 
 ## Features
 - Executes system commands via `subprocess.run()`
-- Logs command output and errors with timestamps
+- Logs command output and errors with timestamps in a structured format
+- Stores logs in `.pycmdlogs`, organized by date
 - Allows renaming the shell prompt using `set name=<new_name>`
 - Handles exit commands (`exit`, `quit`)
 
@@ -37,11 +38,19 @@ python script.py
   ```
 
 ## Logging
-- All command outputs (both stdout and stderr) are saved in `stdout.txt` with timestamps.
+- All command outputs (both stdout and stderr) are saved in `.pycmdlogs/<YYYYMMDD>.txt` with timestamps.
+- Log format:
+  ```
+  ------------
+  | HH:MM:SS |
+  ------------
+  Command output/error
+  ```
 
 ## Error Handling
 - If an invalid `set name` command is used, an error message is displayed.
 - The script handles `KeyboardInterrupt` gracefully.
+- Creates `.pycmdlogs` directory if it does not exist.
 
 ## License
 This project is open-source and free to use.
