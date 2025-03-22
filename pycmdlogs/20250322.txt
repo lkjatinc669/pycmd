@@ -1,0 +1,34 @@
+08:51:26
+2025-03-22 08:51:26.160557
+08:51:26
+ Volume in drive C has no label.
+ Volume Serial Number is C82B-6398
+
+ Directory of C:\Users\gohil\Desktop\python\pycmd
+
+03/22/2025  08:51 AM    <DIR>          .
+03/20/2025  11:10 PM    <DIR>          ..
+03/22/2025  08:41 AM                11 .gitignore
+03/22/2025  08:51 AM             1,376 pycmd.py
+03/22/2025  08:51 AM    <DIR>          pycmdlogs
+03/22/2025  08:33 AM             1,292 Readme.md
+               3 File(s)          2,679 bytes
+               3 Dir(s)  16,422,678,528 bytes free
+------------|08:53:19|
+------------
+------------|08:53:56|
+------------
+------------
+|08:55:42|
+------------
+Use exit() or Ctrl-Z plus Return to exit
+Use exit() or Ctrl-Z plus Return to exit
+
+
+------------
+|08:55:42|
+------------
+Python 3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> >>> >>> 
+
