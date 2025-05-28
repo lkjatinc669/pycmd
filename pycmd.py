@@ -2,28 +2,34 @@ import subprocess
 import datetime
 import os
 
-try:
-    os.mkdir(".pycmdlogs")
-except Exception as e:
-    print(f"Exception occured : {e}")
+# Define log directory in the user's home folder
+log_dir = os.path.join(os.path.expanduser("~"), ".pycmdlogs")
 
+# Try to create the log directory
+try:
+    os.mkdir(log_dir)
+except Exception as e:
+    print(f"Exception occurred : {e}")
+
+# Function to get current date and time in specific formats
 def getDateTime():
     return {
-        "date" : str(datetime.date.today()).replace("-", ""),
-        "time" : datetime.datetime.now().strftime("%H:%M:%S")
+        "date": str(datetime.date.today()).replace("-", ""),
+        "time": datetime.datetime.now().strftime("%H:%M:%S")
     }
 
+# Function to write command output to the log file
 def writer(res):
-    with open(f'./.pycmdlogs/{getDateTime()["date"]}.txt', "a+") as file:
+    log_file_path = os.path.join(log_dir, f'{getDateTime()["date"]}.txt')
+    with open(log_file_path, "a+") as file:
         file.write("------------\n")
         file.write("| " + getDateTime()["time"] + "| \n") 
         file.write("------------\n")
         file.write(res + "\n") 
 
+# Main shell loop function
 def shell():
-
     localShell = "cmd "
-
     while True:
         command = input(f"{localShell}> ")  
         if command.lower() in ["exit", "quit"]:
